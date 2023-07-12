@@ -16,5 +16,6 @@ public:
     
     void cls();
     double readNumber(std::string prompt);
+    void answer(double value, std::string suffix);
 };
 

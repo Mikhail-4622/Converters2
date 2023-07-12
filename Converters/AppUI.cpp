@@ -12,6 +12,7 @@ AppUI::~AppUI() {
 void AppUI::add(Converter* converter) {
     converters.push_back(converter);
 }
+
 void AppUI::start(int index) {
     cls();
     Converter* converter = converters[index];
@@ -55,10 +56,17 @@ void AppUI::mainloop() {
 
 void AppUI::cls() {
     system("cls");
+
+    std::cout << "Convert App" << std::endl;
+    std::cout << std::endl;
 }
 double AppUI::readNumber(std::string prompt) {
     std::cout << "Введите " << prompt << ": ";
     double x;
     std::cin >> x;
     return x;
+}
+
+void AppUI::answer(double value, std::string suffix) {
+    std::cout << "Ответ: " << value << " " << suffix << std::endl;
 }
