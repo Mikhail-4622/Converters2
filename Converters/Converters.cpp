@@ -9,12 +9,18 @@ int main() {
     cout << "Convert App" << endl;
 
     AppUI ui;
-    Converter ms2kh("м/с в км/ч", [](AppUI* ui) {
+
+    ui.add(new Converter("м/с в км/ч", [](AppUI* ui) {
         double x = ui->readNumber("скорость в м/с");
         cout << (x * 3.6) << " км/ч" << endl;
-    });
-    ui.add(&ms2kh);
-    ui.start(0);
+    }));
+
+    ui.add(new Converter("часы в минуты", [](AppUI* ui) {
+        double x = ui->readNumber("часы");
+        cout << (x * 60) << " мин." << endl;
+    }));
+
+    ui.mainloop();
 
     return EXIT_SUCCESS;
 }

@@ -15,5 +15,6 @@ public:
     std::string getName() const;
 
     void start(AppUI* ui);
+
 };
 
